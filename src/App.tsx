@@ -1,25 +1,38 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import styles from "./app.module.scss";
+import { Input } from "./components";
 
 function App() {
+  const DATA = [
+    {
+      title: "Отримувач",
+      value: "ФОП Гиря Марія Володимирівна",
+    },
+    {
+      title: "IBAN",
+      value: "UA373220010000026005330160096",
+    },
+    {
+      title: "ЄДРПОУ",
+      value: "3589104227",
+    },
+    {
+      title: "Призначення",
+      value: "оплата за випічку від - нік в телеграм",
+    },
+  ];
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <main className={styles.app}>
+      <div className={styles.app__dataList}>
+        {DATA.map((dataItem) => (
+          <Input
+            key={dataItem.title}
+            label={dataItem.title}
+            value={dataItem.value}
+          />
+        ))}
+      </div>
+    </main>
   );
 }
 
