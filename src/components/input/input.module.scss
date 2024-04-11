@@ -43,7 +43,7 @@
 
     margin: 0;
 
-    cursor: auto;
+    cursor: pointer;
 
     @include mediaTablet {
       font-size: 12px;
@@ -55,6 +55,7 @@
   height: max-content;
   width: 100%;
 
+  margin: 0;
   margin-left: 10px;
 
   caret-color: transparent;

@@ -34,18 +34,18 @@ export const Input = ({ value, label }: IProps) => {
   }, [isCopied]);
 
   return (
-    <label className={styles.label} onClick={copyToClipboard}>
+    <div className={styles.label} onClick={copyToClipboard}>
       <p>{`${label}:`}</p>
-      <input
-        value={value}
-        readOnly
+      <h4
         className={styles.input}
         style={{
           width: label.includes("Призначення")
             ? `${value.length - 1}ch`
             : `${value.length + 3}ch`,
         }}
-      />
+      >
+        {value}
+      </h4>
       <CopyIcon className={styles.icon} />
       <div
         className={classNames(styles.copied, {
@@ -54,6 +54,6 @@ export const Input = ({ value, label }: IProps) => {
       >
         скопійовано
       </div>
-    </label>
+    </div>
   );
 };
